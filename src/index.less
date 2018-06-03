@@ -1,0 +1,294 @@
+#app {
+	.header-wrap {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 44px;
+		font-family: arial, helvetica, STHeitiSC-Light, 'Heiti SC', droidsansfallback, dengxian, 'microsoft yahei';
+		color: #fff;
+		background-color: rgba(27, 169, 186, 1);
+		z-index: 2;
+
+		.title {
+			font-size: 18px;
+			line-height: 44px;
+			text-align: center;
+		}
+
+		.left {
+			position: absolute;
+			left: 8px;
+			height: 44px;
+			font-size: 24px;
+			line-height: 44px;
+			color: #7ff;
+		}
+
+		.right {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			height: 44px;
+			font-size: 18px;
+			line-height: 44px;
+		}
+	}
+
+	.sub-header {
+		display: flex;
+		justify-content: space-around;
+	    -webkit-box-align: center;
+		position: fixed;
+		top: 44px;
+		width: 100%;
+		height: 60px;
+		background-color: rgba(27, 169, 186, 1);
+		transition: top .5s;
+
+		div {
+			display: inline-block;
+			position: relative;
+			flex: 1;
+			height: 54px;
+			font-size: 12px;
+			font-family: arial, helvetica, STHeitiSC-Light, 'Heiti SC', droidsansfallback, dengxian, 'microsoft yahei';
+			color: #fff;
+			text-align: center;
+
+			.inner-item {
+				display: inline-block;
+				margin: 0 3px;
+    			border-radius: 5px;
+    			width: calc(100% - 6px);
+    			height: 52px;
+
+				&.active {
+	    			color: #1ba9ba;
+					background-color: #e7f8fc;
+				}
+
+				p {
+					margin: 2px 0;
+					&:nth-child(2) {
+						margin-bottom: 2px;
+					}
+					&:nth-child(3) {
+						margin-top: 0;
+						height: 16px;
+						line-height: 16px;
+					}
+				}
+
+				i {
+					padding: 2px 0 5px;
+					font-size: 14px;
+					line-height:14px;
+
+					&.calendar {
+					    display: inline-block;
+					    margin: 4px 0;
+						font-size: 24px;
+					    color: #D7FBFF;
+					}
+				}
+			}
+
+			p {
+				margin: 2px 0;
+				&:nth-child(2) {
+					margin: 0;
+				}
+			}
+
+			i {
+				padding: 2px 0 5px;
+				font-size: 14px;
+				line-height:14px;
+
+				&.calendar {
+				    display: inline-block;
+				    margin: 4px 0;
+					font-size: 24px;
+				    color: #D7FBFF;
+				}
+			}
+
+			p.more {
+				height: 10px;
+				color: #D7FBFF;
+			}
+			&:last-child:before {
+				content: "";
+			    position: absolute;
+			    top: 50%;
+			    left: 0;
+			    transform: translateY(-50%);
+			    width: 1px;
+			    height: 80%;
+			    background-color: #fff;
+			    overflow: hidden;
+			    opacity: 0.2;
+			}
+		}
+	}
+
+	.content-wrap {
+		position: relative;
+		top: 104px;
+		z-index: -1;
+		ul {
+			li {
+				display: flex;
+				padding: 10px 15px;
+				border-bottom: 1px solid rgba(197, 197, 197, 0.298039);
+				height: 87px;
+				font-family: arial, helvetica, STHeitiSC-Light, 'Heiti SC', droidsansfallback, dengxian, 'microsoft yahei';
+
+				.list-item {
+					flex: 5;
+					.time-pos {
+						.start, .end {
+							display: inline-block;
+							width: 30%;
+							text-align: left;
+
+							.time {
+								font-size: 20px;
+								line-height: 20px;
+								color: #333;
+							}
+
+							.pos {
+								font-size: 12px;
+							    line-height: 14px;
+							    margin: 6px 0;
+							    color: #999;
+							}
+						}
+
+						.exchange-right-wrap {
+							display: inline-block;
+							padding: 0 8px;
+							width: 39%;
+							height: 26px;
+							vertical-align: bottom;
+
+							.exchange-right-longer {
+								border-bottom: 1px solid #999;
+								width: 100%;
+								height: 7px;
+
+								&:after {
+									content: '';
+									float: right;
+									width: 6px;
+									height: 6px;
+									border-right: 1px solid #999;
+									transform-origin: bottom right;
+									transform: rotate(-60deg);
+								}
+							}
+						}
+
+						.end {
+							text-align: right;
+						}
+					}
+
+					.flight {
+						margin-top: 6px;
+						width: 100%;
+						height: 14px;
+						font-size: 12px;
+						line-height: 14px;
+						color: #999;
+
+						span {
+							padding: 0 2px;
+
+							&.isShare {
+								color: #4cc379;
+							}
+						}
+					}
+				}
+
+				.price {
+					flex: 2;
+					text-align: right;
+
+					.min-price {
+						height: 20px;
+						font-size: 20px;
+						color: #ff8205;
+
+						i {
+							position: relative;
+							left: 1px;
+							width: 14px;
+							font-size: 16px;
+							line-height: 16px;
+						}
+					}
+
+					.discount {
+						margin-top: 6px;
+						font-size: 12px;
+						line-height: 12px;
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-wrap {
+		display: flex;
+		justify-content: space-around;
+	    -webkit-box-align: center;
+	    align-items: center;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 48px;
+		font-family: arial, helvetica, STHeitiSC-Light, 'Heiti SC', droidsansfallback, dengxian, 'microsoft yahei';
+		background: rgb(248, 248, 248);
+		transition: bottom .5s;
+
+		div {
+			flex: 1;
+			height: 37px;
+			text-align: center;
+			color: #999;
+			vertical-align: middle;
+
+			&.active {
+				color: #1ba9ba;
+			}
+
+			i {
+				display: inline-block;
+				width: 18px;
+				height: 19px;
+				line-height: 18px;
+
+				&.filter {
+					font-size: 16px;
+				}
+
+				&.transform {
+					font-size: 15px;
+				}
+
+				&.price-circle {
+					font-size: 15px;
+				}
+			}
+
+			p {	
+				font-size: 12px;
+				line-height: 18px;
+			}
+		}
+	}
+}
